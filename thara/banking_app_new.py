@@ -1,17 +1,18 @@
-from tabulate import tabulate
-from datetime import datetime
 import ast
 import os
+from tabulate import tabulate
+from datetime import datetime
 
 # Global variables
 accounts = {}
 next_account_number = 1001  # Auto-generated starting account number
-admin_account = {"username": "unicom7", "password": "admin123"}  # set password for default admin account
+admin_account = {"username": "unicom", "password": "admin123"}  # set password for default admin account
 
 DATA_FILE = "accounts_data.txt"
 
 # Load accounts and admin data from text file
 def load_accounts():
+    global tabulate
     global accounts, next_account_number, admin_account
     if not os.path.exists(DATA_FILE):
         return
